@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ui/pages/detailOfYourPlan/detailOfYourPlan.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ui/pages/detailOfYourPlan/detailOfYourPlan.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const userDataViewModel = require('/main/domain/UserDataViewModel');
+const deviceDataViewModel = require('/main/domain/DeviceDataViewModel');
+const retrievePlanViewModel = require('/main/domain/RetrievePlanViewModel');
+
+Page({
+  data: {
+    showLoading: false,
+    showPopupPlanDescription: false,
+    lineNumber: '',
+    planName: '',
+    planDescription: '',
+    mobileData: '',
+    socialNetworks: 0,
+    socialNetworksList: [],
+    voice: '',
+    sms: '',
+  },
+  onLoad(query) {
+    this.showLoading();
+    my.setNavigationBar({
+      title: ""
+    });
+
+    const {
+      screenHeight,
+      platform
+    } = my.getSystemInfoSync();
+
+    this.setData({
+      platform,
+      screenHeight,
+      popupHeight: platform == 'iOS' ? screenHeight / 2 : (screenHeight / 4.5) - 100
+    });
+
+    userDataViewModel.createUserDataLoginInStorage(query.userData);
+    deviceDataViewModel.createDeviceDataInStorage(query.deviceData);
+
+    var userDataLocal = userDataViewModel.getUserDataInStorageLocal();
+    var deviceDataLocal = deviceDataViewModel.getDeviceDataInStorage();
+
+    retrievePlanViewModel.getPlanDetailByAccountId(userDataLocal, deviceDataLocal)
+      .then((result) => {
+        this.hideLoading();
+        if (result.success) {
+          this.setData({
+            lineNumber: userDataLocal.accountId,
+            planName: result.data.planName,
+            planDescription: result.data.planDescription,
+            mobileData: result.data.mobileData,
+            socialNetworks: result.data.socialNetworks,
+            socialNetworksList: result.data.socialNetworksList,
+            voice: result.data.voice,
+            sms: result.data.sms
+          });
+        } else {
+
+        }
+      })
+  },
+
+  /**
+   * Establece la propiedad showPopupPlanDescription en el objeto de datos en verdadero para mostrar la descripción del plan.
+   * @function onViewPlanDescription
+   * @name onViewPlanDescription
+   */
+  onViewPlanDescription() {
+    this.setData({
+      showPopupPlanDescription: true
+    })
+  },
+
+  /**
+   * Redirecciona a la web view de pagos y recargas
+   * @function onRedirectBuyPackagesAndRefills
+   * @name onRedirectBuyPackagesAndRefills
+   */
+  onRedirectBuyPackagesAndRefills() {
+    my.navigateTo({
+      url: "/main/ui/pages/paymentAndRechargeWebView/paymentAndRechargeWebView"
+    })
+  },
+
+
+  /**
+   * Establece la propiedad showPopupPlanDescription en el objeto de datos en falso para ocultar la descripción del plan.
+   * @function handlePopupClose
+   * @name handlePopupClose
+   */
+  handlePopupClose() {
+    this.setData({
+      showPopupPlanDescription: false
+    })
+  },
+
+  /**
+   * Establece la propiedad showLoading en verdadero para mostrar la pantalla de carga
+   * @function showLoading
+   * @name showLoading
+   */
+  showLoading() {
+    this.setData({
+      showLoading: true
+    });
+  },
+
+  /**
+   * Establece la propiedad showLoading en falso para ocultar la pantalla de carga
+   * @function hideLoading
+   * @name hideLoading
+   */
+  hideLoading() {
+    this.setData({
+      showLoading: false
+    });
+  }
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-DeviceSpecRepository.html">DeviceSpecRepository</a></li><li><a href="module-UserDataLogin.html">UserDataLogin</a></li><li><a href="module-UserDataRepository.html">UserDataRepository</a></li><li><a href="module-deviceDataStorage.html">deviceDataStorage</a></li><li><a href="module-userDataStorage.html">userDataStorage</a></li></ul><h3>Classes</h3><ul><li><a href="DeviceSpec.html">DeviceSpec</a></li><li><a href="PlanDetail.html">PlanDetail</a></li><li><a href="RetrievePlanRepository.html">RetrievePlanRepository</a></li><li><a href="RetrievePlanRequest.html">RetrievePlanRequest</a></li><li><a href="module.exports_module.exports.html">exports</a></li><li><a href="module-DeviceSpecRepository.html">DeviceSpecRepository</a></li><li><a href="module-UserDataLogin.html">UserDataLogin</a></li><li><a href="module-UserDataRepository.html">UserDataRepository</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createDeviceDataInStorage">createDeviceDataInStorage</a></li><li><a href="global.html#createUserDataLoginInStorage">createUserDataLoginInStorage</a></li><li><a href="global.html#getDeviceDataInStorage">getDeviceDataInStorage</a></li><li><a href="global.html#getPlanDetailByAccountId">getPlanDetailByAccountId</a></li><li><a href="global.html#getUserDataInStorageLocal">getUserDataInStorageLocal</a></li><li><a href="global.html#handlePopupClose">handlePopupClose</a></li><li><a href="global.html#hideLoading">hideLoading</a></li><li><a href="global.html#onRedirectBuyPackagesAndRefills">onRedirectBuyPackagesAndRefills</a></li><li><a href="global.html#onViewPlanDescription">onViewPlanDescription</a></li><li><a href="global.html#postRetrievePlanRemote">postRetrievePlanRemote</a></li><li><a href="global.html#showLoading">showLoading</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Aug 31 2023 17:26:44 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

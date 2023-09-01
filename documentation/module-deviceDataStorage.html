@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Module: deviceDataStorage</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Module: deviceDataStorage</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Almacena datos del dispositivo en el almacenamiento y recupera datos del dispositivo del almacenamiento.</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_attributes_deviceData_source_DeviceSpecLocal.js.html">data/attributes/deviceData/source/DeviceSpecLocal.js</a>, <a href="data_attributes_deviceData_source_DeviceSpecLocal.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~createDeviceDataInStorage"><span class="type-signature">(inner) </span>createDeviceDataInStorage<span class="signature">(key, deviceSpec)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Almacena los datos del dispositivo en el almacenamiento.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>La clave utilizada para identificar los datos del dispositivo almacenados.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>deviceSpec</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>La especificación del dispositivo que se almacenará en el almacenamiento.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_attributes_deviceData_source_DeviceSpecLocal.js.html">data/attributes/deviceData/source/DeviceSpecLocal.js</a>, <a href="data_attributes_deviceData_source_DeviceSpecLocal.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Devuelve verdadero si los datos del dispositivo se almacenaron correctamente en el almacenamiento; de lo contrario, es falso.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="~getDeviceDataInStorage"><span class="type-signature">(inner) </span>getDeviceDataInStorage<span class="signature">(key)</span><span class="type-signature"> &rarr; {object|Error}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    <p>Recupera los datos del dispositivo del almacenamiento.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>La clave utilizada para identificar los datos del dispositivo almacenados.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_attributes_deviceData_source_DeviceSpecLocal.js.html">data/attributes/deviceData/source/DeviceSpecLocal.js</a>, <a href="data_attributes_deviceData_source_DeviceSpecLocal.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Devuelve los datos del dispositivo si se recuperan correctamente del almacenamiento; de lo contrario, devuelve el objeto de error.</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+|
+
+<span class="param-type">Error</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-DeviceSpecRepository.html">DeviceSpecRepository</a></li><li><a href="module-UserDataLogin.html">UserDataLogin</a></li><li><a href="module-UserDataRepository.html">UserDataRepository</a></li><li><a href="module-deviceDataStorage.html">deviceDataStorage</a></li><li><a href="module-userDataStorage.html">userDataStorage</a></li></ul><h3>Classes</h3><ul><li><a href="DeviceSpec.html">DeviceSpec</a></li><li><a href="PlanDetail.html">PlanDetail</a></li><li><a href="RetrievePlanRepository.html">RetrievePlanRepository</a></li><li><a href="RetrievePlanRequest.html">RetrievePlanRequest</a></li><li><a href="module.exports_module.exports.html">exports</a></li><li><a href="module-DeviceSpecRepository.html">DeviceSpecRepository</a></li><li><a href="module-UserDataLogin.html">UserDataLogin</a></li><li><a href="module-UserDataRepository.html">UserDataRepository</a></li></ul><h3>Global</h3><ul><li><a href="global.html#createDeviceDataInStorage">createDeviceDataInStorage</a></li><li><a href="global.html#createUserDataLoginInStorage">createUserDataLoginInStorage</a></li><li><a href="global.html#getDeviceDataInStorage">getDeviceDataInStorage</a></li><li><a href="global.html#getPlanDetailByAccountId">getPlanDetailByAccountId</a></li><li><a href="global.html#getUserDataInStorageLocal">getUserDataInStorageLocal</a></li><li><a href="global.html#handlePopupClose">handlePopupClose</a></li><li><a href="global.html#hideLoading">hideLoading</a></li><li><a href="global.html#onRedirectBuyPackagesAndRefills">onRedirectBuyPackagesAndRefills</a></li><li><a href="global.html#onViewPlanDescription">onViewPlanDescription</a></li><li><a href="global.html#postRetrievePlanRemote">postRetrievePlanRemote</a></li><li><a href="global.html#showLoading">showLoading</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Aug 31 2023 17:26:44 GMT-0500 (Colombia Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
